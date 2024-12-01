@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import JumbotronImage from "./assets/images/big-shoes-hero.png";
 import FollowersIcon from "./assets/icons/followers.svg";
 import TotalPosts from "./assets/icons/total-posts.svg";
-import { CustomButton, ImageRounded, Loading } from "./components";
+import {
+  BarChart,
+  CustomButton,
+  DoughChart,
+  HighestLikes,
+  ImageRounded,
+  Loading,
+  SelectOption,
+} from "./components";
 import { getUserInfo } from "./services/api";
 import { ConvertPdf, formatNumber } from "./utils/utils";
 
@@ -180,6 +188,57 @@ const App = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-10 mb-5">
+          <h4 className="font-bold text-xl">
+            Daily Posts and Engangements Perfomance
+          </h4>
+          <BarChart />
+        </div>
+
+        <div className="flex justify-between gap-10">
+          <div style={{ width: "100%" }}>
+            <h4 className="font-bold text-xl">Most Popular Hashtag</h4>
+            <SelectOption />
+          </div>
+          <div style={{ width: "100%" }}>
+            <h4 className="font-bold text-xl">Most Popular Hashtag</h4>
+            <SelectOption />
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <h4 className="font-bold text-xl">
+            Postingan dengan likes tertinggi oleh profil yang dicari
+          </h4>
+          <p className="mb-5">Post URL</p>
+          <HighestLikes />
+        </div>
+
+        <div className="flex justify-between gap-10 mt-10">
+          <div style={{ width: "100%" }}>
+            <h4 className="font-bold text-xl">Most Keyword</h4>
+            <SelectOption />
+          </div>
+          <div style={{ width: "100%" }}>
+            <h4 className="font-bold text-xl">Most Popular Email</h4>
+            <SelectOption />
+          </div>
+          <div style={{ width: "100%" }}>
+            <h4 className="font-bold text-xl">Most Popular Phone Number</h4>
+            <SelectOption />
+          </div>
+        </div>
+
+        <div className="flex items-center flex-col mt-10">
+          <div>
+            <h4 className="font-bold text-xl text-center">Sentiment</h4>
+            <p>Sentiment mengenai profil yang dicari</p>
+          </div>
+          <div>
+            <DoughChart />
           </div>
         </div>
       </div>
